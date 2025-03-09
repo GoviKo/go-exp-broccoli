@@ -12,3 +12,39 @@ please consider these:
 The following guides illustrate how to use some features concretely:
 
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+
+)
+
+### Testing the Service
+
+#### default profile
+```
+$>  java  -jar  target/demo-sb-profile-0.0.1-SNAPSHOT.jar
+
+$>  curl http://localhost:8080/status
+lorem ipsum
+```
+
+#### test profile
+```
+$>  java  -jar  -Dspring.profiles.active=test  target/demo-sb-profile-0.0.1-SNAPSHOT.jar
+
+$>  curl http://localhost:8080/status
+lorem ipsum
+```
+
+#### broccoli profile
+```
+$>  java -jar  -Dspring.profiles.active=broccoli  target/demo-sb-profile-0.0.1-SNAPSHOT.jar
+
+$>  curl http://localhost:8080/status
+broccoli message
+```
+
+#### prod profile
+```
+$>  java -jar  -Dspring.profiles.active=prod  target/demo-sb-profile-0.0.1-SNAPSHOT.jar
+
+$>  curl http://localhost:8080/status
+this is that PROD message
+```
