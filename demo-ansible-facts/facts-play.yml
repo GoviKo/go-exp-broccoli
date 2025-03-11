@@ -1,0 +1,32 @@
+---
+- name:  play facts
+  hosts: "{{ target_hosts }}"
+  gather_facts: false
+  become: false
+  vars:
+    hList: 
+      - { name: "lorem", value: "ipsum" }
+      - { name: "foo", value: "bar" }
+      - { name: "tempus", value: "fugit" }
+      
+  tasks:
+    - name: display the dictonary
+      debug:
+        var: hList
+
+    - name: set keys as facts
+      set_fact:
+        "fact_{{ item.name }}": "{{ item.value }}"
+      with_items: "{{ hList }}"
+
+    - name: check fact_lorem
+      debug:
+        msg: "{{ fact_lorem }}"
+    
+    - name: check fact_foo
+      debug:
+        msg: "{{ fact_foo }}"
+
+    - name: check fact_tempus
+      debug:
+        msg: "{{ fact_tempus }}"
