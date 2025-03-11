@@ -1,5 +1,5 @@
 # GoviKo Repository
-project for various demo source code.
+repository of various demo source code.
 
 ## List of projects
 
@@ -7,8 +7,14 @@ project for various demo source code.
 
 #### demo-sb-profile
 ```
-  seggregate and manage
+  demo of spring boot profiles:
+    seggregate and manage
      application config in parts,
-     environment specific
+    environment specific values
 ```
 
+#### demo-ansible-facts
+```
+  demo of ansible facts
+    set and check facts 
+```
