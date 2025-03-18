@@ -6,6 +6,7 @@ repository of various demo source code.
 *  demo springboot profile
 *  demo ansible facts
 *  demo-springboot-interceptor
+*  demo-graphql-java
 
 
 ####  demo-springboot-profile
@@ -32,4 +33,10 @@ repository of various demo source code.
       a metric capture,
       and enhance log details
     
+```
+
+####  demo-graphql-java
+```
+  demo of graph java:
+    simple/first getting started query
 ```

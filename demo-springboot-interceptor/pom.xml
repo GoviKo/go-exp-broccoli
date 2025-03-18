@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>io.goviko.profile.profiledemo</groupId>
+    <groupId>io.goviko.interceptor.interceptordemo</groupId>
     <artifactId>demo-sb-interceptor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
