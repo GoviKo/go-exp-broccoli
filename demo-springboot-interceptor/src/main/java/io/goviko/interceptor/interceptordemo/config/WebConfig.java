@@ -11,16 +11,20 @@ public class WebConfig implements WebMvcConfigurer {
 
     private final LoggingInterceptor loggingInterceptor;
     private final MetricsInterceptor metricsInterceptor;
+    private final ApiValidationInterceptor keyValidationInterceptor;
 
     @Autowired
     public WebConfig(LoggingInterceptor theLoggingInterceptor,
-                     MetricsInterceptor theMetricsInterceptor) {
+                     MetricsInterceptor theMetricsInterceptor,
+                     ApiValidationInterceptor theApiValidationInterceptor) {
         loggingInterceptor = theLoggingInterceptor;
         metricsInterceptor = theMetricsInterceptor;
+        keyValidationInterceptor = theApiValidationInterceptor;
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(keyValidationInterceptor);
         registry.addInterceptor(loggingInterceptor);
         registry.addInterceptor(metricsInterceptor);
     }
