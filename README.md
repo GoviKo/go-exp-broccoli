@@ -37,6 +37,12 @@ repository of various demo source code.
 
 ####  demo-graphql-java
 ```
-  demo of graph java:
+  demo of graphql java:
     simple/first getting started query
+```
+
+####  demo-graphql-spring
+```
+  demo of graphql spring:
+    spring graphql getting started
 ```

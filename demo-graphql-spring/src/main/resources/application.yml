@@ -1,0 +1,11 @@
+---
+spring:
+  graphql:
+    graphiql:
+      enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        graphql: TRACE
