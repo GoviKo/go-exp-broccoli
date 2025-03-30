@@ -3,11 +3,17 @@ repository of various demo source code.
 
 ## List of code
 
-*  demo springboot profile
-*  demo ansible facts
-*  demo-springboot-interceptor
-*  demo-graphql-java
+*  demo springboot 
+    *  demo springboot profile
+    *  demo-springboot-interceptor
+*  demo ansible
+    * demo ansible facts
+*  demo-graphql
+    *  demo-graphql-java
+    *  demo-graphql-spring
 
+
+## Code description/preview
 
 ####  demo-springboot-profile
 ```
@@ -15,13 +21,6 @@ repository of various demo source code.
     Example include:
       seggregate and manage application config in parts,
       environment specific values
-```
-
-####  demo-ansible-facts
-```
-  demo of ansible facts
-    Example include:
-      set and check facts/values
 ```
 
 ####  demo-springboot-interceptor
@@ -33,6 +32,13 @@ repository of various demo source code.
       a metric capture,
       and enhance log details
     
+```
+
+####  demo-ansible-facts
+```
+  demo of ansible facts
+    Example include:
+      set and check facts/values
 ```
 
 ####  demo-graphql-java
