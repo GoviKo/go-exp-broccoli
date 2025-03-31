@@ -6,6 +6,7 @@ repository of various demo source code.
 *  demo springboot 
     *  demo springboot profile
     *  demo-springboot-interceptor
+    *  demo-springboot-filter
 *  demo ansible
     * demo ansible facts
 *  demo-graphql
@@ -32,6 +33,14 @@ repository of various demo source code.
       a metric capture,
       and enhance log details
     
+```
+
+####  demo-springboot-filter
+```
+  demo of spring boot filter:
+    Defining spring boot filter with jakarta filter chain, and use without spring context
+    Example include:
+      adding couple of headers on the response
 ```
 
 ####  demo-ansible-facts

@@ -24,7 +24,7 @@ $>  java  -Dserver.port=9091  -Dspring.profiles.active=wombat  -jar target/demo-
 
 ```
 ## Unauthorized - No key
-$>  $>  curl http://localhost:9091/message   -v
+$>  $>  curl  -i  http://localhost:9091/message
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > GET /status HTTP/1.1
@@ -38,7 +38,7 @@ $>
 
 ```
 ## Forbidden - Incorrect key
-$>  $>  curl -H 'X-API-KEY:  a'  http://localhost:9091/message   -v
+$>  $>  curl  -i  -H 'X-API-KEY: a'  http://localhost:9091/message
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > GET /status HTTP/1.1
@@ -53,14 +53,14 @@ $>
 
 ```
 ## Ok - valid key
-$>  $>  curl -H 'X-API-KEY:  ************'  http://localhost:9091/message   -v
+$>  $>  curl  -i  -H 'X-API-KEY: ************' http://localhost:9091/message
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > GET /status HTTP/1.1
 > Host: localhost:8080
 > User-Agent: curl/7.88.1
 > Accept: */*
-> X-API-KEY: a
+> X-API-KEY: ************
 > 
 < HTTP/1.1 200 OK
 lorem ipsum
