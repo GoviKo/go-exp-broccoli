@@ -43,12 +43,22 @@ repository of various demo source code.
       adding couple of headers on the response
 ```
 
+####  demo-springboot-aspect
+```
+  demo of spring AOP:
+    Adding AspectJ pointcuts using @AspectJ annotation style
+    Examples include:
+      executing lines before, after, and around service and controller methods
+```
+
+
 ####  demo-ansible-facts
 ```
   demo of ansible facts
     Example include:
       set and check facts/values
 ```
+
 
 ####  demo-graphql-java
 ```

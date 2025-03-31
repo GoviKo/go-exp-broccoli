@@ -24,7 +24,7 @@ $>  java  -Dserver.port=9091  -Dspring.profiles.active=wombat  -jar target/demo-
 
 ```
 ## Unauthorized - No key
-$>  $>  curl  -i  http://localhost:9091/message
+$>  curl  -i  http://localhost:9091/message
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > GET /status HTTP/1.1
@@ -38,7 +38,7 @@ $>
 
 ```
 ## Forbidden - Incorrect key
-$>  $>  curl  -i  -H 'X-API-KEY: a'  http://localhost:9091/message
+$>  curl  -i  -H 'X-API-KEY: a'  http://localhost:9091/message
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > GET /status HTTP/1.1
@@ -53,7 +53,7 @@ $>
 
 ```
 ## Ok - valid key
-$>  $>  curl  -i  -H 'X-API-KEY: ************' http://localhost:9091/message
+$>  curl  -i  -H 'X-API-KEY: ************' http://localhost:9091/message
 *   Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > GET /status HTTP/1.1
@@ -73,4 +73,3 @@ $>
 2025-03-16T10:11:07.675-04:00  INFO 11790 --- [ qtp15912555-28] i.g.i.i.MetricsInterceptor               : Request to /message took 107.904649 millis
 
 ```
-

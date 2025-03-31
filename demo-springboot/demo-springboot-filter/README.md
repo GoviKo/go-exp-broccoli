@@ -59,4 +59,3 @@ $>  curl  http://localhost:8071/books
 * Connection #0 to host localhost left intact
 Ordered Book with id = 1
 ```
-
