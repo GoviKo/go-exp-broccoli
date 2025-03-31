@@ -7,6 +7,7 @@ import org.springframework.boot.test.mock.mockito.*;
 import org.springframework.test.web.servlet.*;
 import org.junit.jupiter.api.extension.*;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -16,6 +17,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(value = ItemController.class)
+@ActiveProfiles("test")
 public class ItemControllerTest {
 
     @Autowired

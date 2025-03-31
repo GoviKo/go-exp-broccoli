@@ -8,12 +8,14 @@ import org.springframework.test.web.servlet.*;
 import io.goviko.interceptor.interceptordemo.controller.*;
 import io.goviko.interceptor.interceptordemo.service.*;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ActiveProfiles("test")
 @WebMvcTest(value = AppController.class)
 public class InterceptorAppTests {
 
@@ -46,7 +48,7 @@ public class InterceptorAppTests {
     @Test
     void shouldAllowAccessWithValidApiKey() throws Exception {
         when(appService.message())
-            .thenReturn("foo bar`");
+            .thenReturn("foo bar");
 
         this.mockMvc
             .perform(get("/message")
