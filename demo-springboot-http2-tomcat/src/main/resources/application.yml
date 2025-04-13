@@ -1,0 +1,16 @@
+---
+server:
+  port: 19211
+  http2:
+    enabled: true
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: p8ssw0
+    key-store-type: PKCS12
+    key-alias: http2-alias
+
+spring:
+  virtual:
+    threads:
+      enabled: true
