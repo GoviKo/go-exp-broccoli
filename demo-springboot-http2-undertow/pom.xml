@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>io.goviko.http2.sbhttp2demo</groupId>
-    <artifactId>demo-sb-http2</artifactId>
+    <artifactId>demo-sb-http2-undertow</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>demo-sb-http2</name>
@@ -21,6 +21,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- use undertow instead -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

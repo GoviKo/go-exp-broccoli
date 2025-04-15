@@ -6,6 +6,7 @@ please consider these:
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html/)
 * [Spring Web](https://docs.spring.io/spring-boot/reference/web/servlet.html)
+* [Spring Boot WebServers](https://docs.spring.io/spring-boot/how-to/webserver.html)
 
 ### Guides
 The following guides illustrate how to use some features concretely:
@@ -17,7 +18,7 @@ The following guides illustrate how to use some features concretely:
 
 #### default tcp protocol
 ```
-$>  java -jar -Dspring.profiles.active=wombat target/demo-sb-http2-0.0.1-SNAPSHOT.jar  
+$>  java -jar -Dspring.profiles.active=wombat target/demo-sb-http2-undertow-0.0.1-SNAPSHOT.jar
 
 $>  curl https://localhost:19211/weather?city=MN -v --insecure
 *   Trying 127.0.0.1:19211...
@@ -25,6 +26,13 @@ $>  curl https://localhost:19211/weather?city=MN -v --insecure
 * ALPN: offers h2,http/1.1
 * TLSv1.3 (OUT), TLS handshake, Client hello (1):
 * TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+
 ...
 ...
 * Using Stream ID: 1 (easy handle 0x55a776524780)
@@ -39,7 +47,7 @@ $>  curl https://localhost:19211/weather?city=MN -v --insecure
 < content-length: 45
 < 
 * Connection #0 to host localhost left intact
-Requesting weather for city MN.  Temp = 13.55
+Requesting weather for city MN.  Temp = 39.39
 ```
 
 #### using http1.0
@@ -49,23 +57,8 @@ $>  curl https://localhost:19211/weather?city=MN -v --insecure --http1.0
 * Connected to localhost (127.0.0.1) port 19211 (#0)
 * ALPN: offers http/1.0
 * TLSv1.3 (OUT), TLS handshake, Client hello (1):
-* TLSv1.3 (IN), TLS handshake, Server hello (2):
-...
-...
-* using HTTP/1.x
-> GET /weather?city=MN HTTP/1.0
-> Host: localhost:19211
-> User Agent: curl/7.88.1
-> Accept: */*
-> 
-* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
-< HTTP/1.1 200 
-< Content-Type: text/plain;charset=UTF-8
-< Content-Length: 44
-< Date: Sun, 13 Apr 2025 02:58:40 GMT
-< Connection: close
-< 
+* TLSv1.3 (IN), TLS alert, no application protocol (632):
+* OpenSSL/3.0.15: error:0A000460:SSL routines::tlsv1 alert no application protocol
 * Closing connection 0
-* TLSv1.3 (OUT), TLS alert, close notify (256):
-Requesting weather for city MN.  Temp = 1.95
+curl: (35) OpenSSL/3.0.15: error:0A000460:SSL routines::tlsv1 alert no application protocol
 ```
